@@ -1,0 +1,950 @@
+/* css-style */
+
+
+/*Creation Date:28th of september of 2017
+		Modification date: 9th of November of 2017
+		Created by: Fernando La Torre Zurita
+		Purpose: Tasty Bakery website*/
+
+
+/*Code to format all pages of Bakery*/
+
+
+/*--Format style for diferent parts and headings and body, this part of code was build with assitance from
+		https://www.w3schools.com/css/css_navbar.asp ; http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/ */
+
+#headerFood {
+    background-color: #C41313;
+    position: relative;
+    top: 0em;
+    left: 0em;
+    width: 120%;
+    height: 1.5em;
+    padding-top: 0.2em;
+}
+
+#outerBox {
+    min-width: 1200px;
+}
+
+#sliderBox {
+    display: inline-block;
+    position: relative;
+    width: 1200px;
+    animation-name: Slide1;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+#sliderBox img {
+    height: 400px;
+    width: 800px;
+    float: left;
+}
+
+
+/*Code executed following instructions from:
+								https://www.youtube.com/watch?v=fLNUVtFIw40*/
+
+@keyframes Slide1 {
+    0% {
+        left: 0px;
+    }
+    10% {
+        left: -0px;
+    }
+    20% {
+        left: -600px;
+    }
+    40% {
+        left: -600px;
+    }
+    50% {
+        left: -1200px;
+    }
+    60% {
+        left: -1200px;
+    }
+    70% {
+        left: -1800px;
+    }
+    800% {
+        left: -1800px;
+    }
+    90% {
+        left: -2400px;
+    }
+    100% {
+        left: -2600px;
+    }
+}
+
+
+/*Background imageformat*/
+
+#backgroundimage {
+    height: auto;
+    left: 0;
+    margin: 0;
+    min-height: 100%;
+    min-width: 674px;
+    padding: 0;
+    position: absolute;
+    top: 15em;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+h1 {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 5em;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6em;
+}
+
+
+/*Antic+Didone  Permanent+Marker*/
+
+h2 {
+    font-family: 'Antic Didone', serif;
+    font-size: 30px;
+    color: black;
+}
+
+h3 {
+    font-family: 'Antic Didone', serif;
+    font-size: 20px;
+}
+
+body {
+    font-family: Verdana;
+    font-size: 15px;
+    margin: 0;
+    line-height: 24px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+#titleLogo {
+    display: inline-block;
+    position: relative;
+}
+
+#fotologo {
+    display: inline-block;
+    position: relative;
+}
+
+.sidenav {
+    height: 105em;
+    width: 12em;
+    position: sticky;
+    z-index: 3;
+    float: left;
+    top: -4em;
+    left: 0;
+    background-color: #16BF00;
+    overflow-x: hidden;
+    padding-top: 5em;
+    padding-left: 2em;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #d6d6d6;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.mainText {
+    margin-top: -2em;
+    margin-left: 5em;
+    /* Same as the width of the sidenav */
+    font-size: 2em;
+    /* Increased text to enable scrolling */
+    font-family: 'Antic Didone', serif;
+    padding: 2em 2em 3em 3em;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+th,
+td {
+    padding: 10px 10px 10px 100px;
+    text-align: left;
+}
+
+#footerRestaurant {
+    background-color: #1F3C7C;
+    position: relative;
+    padding-left: 5em;
+    top: 8em;
+    left: 0em;
+    width: 120%;
+    height: 6em
+}
+
+
+/*Style for menu page*/
+
+.portfolio {
+    position: relative;
+    top: 0.5em;
+    left: 5%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: auto;
+    width: 90%;
+    overflow: hidden;
+}
+
+#dishes {
+    height: 13em;
+    width: 16em;
+}
+
+.portfolio_content {
+    padding-bottom: 120px;
+    display: inline-block;
+}
+
+.portfolio .portfolio_content .head_title h3 {
+    color: #000000;
+}
+
+.portfolio .portfolio_content .head_title h4 {
+    color: #000000;
+}
+
+.head_title {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.single_portfolio_text {
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.single_portfolio_text img {
+    width: 100%;
+}
+
+.single_portfolio_text:hover .portfolio_images_overlay {
+    top: 28px;
+    left: 14px;
+}
+
+.portfolio_images_overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    padding: 5px;
+    margin: 0 auto;
+    top: -100%;
+    left: 14px;
+    position: absolute;
+    transition: .6s;
+}
+
+.portfolio_images_overlay h6 {
+    position: absolute;
+    top: -1em;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.3125rem;
+    line-height: 2rem;
+}
+
+.portfolio_images_overlay p.product_price {
+    position: relative;
+    top: 0.8em;
+    font-size: 2.5725rem;
+    color: #fff;
+    line-height: 3rem;
+}
+
+
+/*Style for products selection*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+html,
+html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+body {
+    background-color: #fff;
+    color: black;
+    margin: 0 auto;
+}
+
+a {
+    border: 0 none;
+    outline: 0;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button {
+    border: 0 none;
+    outline: 0 none;
+}
+
+button {
+    background-color: #666;
+    color: #fff;
+}
+
+button:hover,
+button:focus {
+    background-color: #555;
+}
+
+.basket-module,
+.basket-labels,
+.basket-product img {
+    width: 100%;
+}
+
+input,
+button,
+.basket,
+.basket-module,
+.basket-labels,
+.item,
+.price,
+.quantity,
+.subtotal,
+.basket-product,
+.product-image,
+.product-details {
+    float: left;
+}
+
+.price:before,
+.subtotal:before,
+.subtotal-value:before,
+.total-value:before,
+.promo-value:before {
+    content: 'Eu ';
+}
+
+.hide {
+    display: none;
+}
+
+main {
+    /* clear: both;*/
+    font-size: 0.75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1rem 0;
+    width: 960px;
+}
+
+.basket,
+aside {
+    padding: 0 1rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.basket {
+    width: 70%;
+}
+
+.basket-module {
+    color: #111;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3125rem;
+}
+
+.promo-code-field {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    width: 48%;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.promo-code-field:hover,
+.promo-code-field:focus {
+    border: 1px solid #999;
+}
+
+.promo-code-cta {
+    border-radius: 4px;
+    font-size: 0.625rem;
+    margin-left: 0.625rem;
+    padding: 0.6875rem 1.25rem 0.625rem;
+}
+
+.basket-labels {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 1.625rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    color: #111;
+    display: inline-block;
+    padding: 0.625rem 0;
+}
+
+li.price:before,
+li.subtotal:before {
+    content: '';
+}
+
+.item {
+    width: 55%;
+}
+
+.price,
+.quantity,
+.subtotal {
+    width: 15%;
+}
+
+.subtotal {
+    text-align: right;
+}
+
+.remove {
+    bottom: 1.125rem;
+    float: right;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 45%;
+}
+
+.remove button {
+    background-color: transparent;
+    color: #777;
+    float: none;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.item-heading {
+    padding-left: 4.375rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.basket-product {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.product-image {
+    width: 35%;
+}
+
+.product-details {
+    width: 65%;
+}
+
+.product-frame {
+    border: 1px solid #aaa;
+}
+
+.product-details {
+    padding: 0 1.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.quantity-field {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 0.625rem;
+    padding: 2px;
+    width: 3.75rem;
+}
+
+aside {
+    float: right;
+    position: relative;
+    width: 30%;
+}
+
+.summary {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 1rem;
+    position: fixed;
+    top: 2em;
+    left: 80%em;
+    width: 280px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.summary-total-items {
+    color: #666;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.summary-subtotal,
+.summary-total {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    margin: 1rem 0;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.subtotal-title,
+.subtotal-value,
+.total-title,
+.total-value,
+.promo-title,
+.promo-value {
+    color: #111;
+    float: left;
+    width: 50%;
+}
+
+.summary-promo {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.promo-title {
+    float: left;
+    width: 70%;
+}
+
+.promo-value {
+    color: #8B0000;
+    float: left;
+    text-align: right;
+    width: 30%;
+}
+
+.summary-delivery {
+    padding-bottom: 3rem;
+}
+
+.subtotal-value,
+.total-value {
+    text-align: right;
+}
+
+.total-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.summary-checkout {
+    display: block;
+}
+
+.go-toCheckout {
+    display: block;
+    float: none;
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.625rem 0;
+    width: 100%;
+}
+
+.summary-delivery-selection {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    display: block;
+    font-size: 0.625rem;
+    height: 34px;
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    aside,
+    .basket,
+    .summary,
+    .item,
+    .remove {
+        width: 100%;
+    }
+    .basket-labels {
+        display: none;
+    }
+    .basket-module {
+        margin-bottom: 1rem;
+    }
+    .item {
+        margin-bottom: 1rem;
+    }
+    .product-image {
+        width: 40%;
+    }
+    .product-details {
+        width: 60%;
+    }
+    .price,
+    .subtotal {
+        width: 33%;
+    }
+    .quantity {
+        text-align: center;
+        width: 34%;
+    }
+    .quantity-field {
+        float: none;
+    }
+    .remove {
+        bottom: 0;
+        text-align: left;
+        margin-top: 0.75rem;
+        position: relative;
+    }
+    .remove button {
+        padding: 0;
+    }
+    .summary {
+        margin-top: 1.25rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+    aside {
+        padding: 0 1rem 0 0;
+    }
+    .summary {
+        width: 28%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    main {
+        width: 100%;
+    }
+    .product-details {
+        padding: 0 1rem;
+    }
+}
+
+
+/*Nav bar style*/
+
+.bigcart {
+    background: url(../images/sprite.png);
+    background-position: 0px 11px;
+    background-repeat: no-repeat;
+    width: 155px;
+    height: 120px;
+    margin: 0 0 40px 60px;
+}
+
+.navbar {
+    background-color: #4ea6bc;
+    padding: 15px;
+    border-radius: 0;
+    margin: 0;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-family: Open Sans, sans-serif;
+    padding-left: 32px;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+
+/*	Breadcrumb style */
+
+.breadcrumb>.active a {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.breadcrumb li a {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.breadcrumb>li+li:before {
+    padding-right: 20px;
+    color: white;
+    /*  content: "\00BB";*/
+}
+
+.breadcrumb {
+    margin-bottom: 100px;
+    background-color: #ffffff;
+}
+
+.breadcrumbBox {
+    background-color: #ffffff;
+    height: 100px;
+    margin-bottom: 100px;
+    padding-top: 32px;
+}
+
+.bigcart {
+    background: url(../images2/sprite.png);
+    background-position: 0px 11px;
+    background-repeat: no-repeat;
+    width: 155px;
+    height: 120px;
+    margin: 0 0 40px 60px;
+}
+
+
+/* *************************** CSS for Form Check********************************/
+
+.card .backside {
+    text-align: center;
+    font-size: 0.7em;
+    padding: 10px;
+}
+
+.card .frontside {
+    text-align: center;
+    font-size: 0.7em;
+    padding: 10px;
+}
+
+.card .company {
+    box-sizing: border-box;
+    float: right;
+}
+
+.frontside {
+    display: inline-block;
+    position: relative;
+}
+
+.backside {
+    display: inline-block;
+    position: relative;
+}
+
+.backside {
+    width: 350px;
+    height: 200px;
+}
+
+.frontside {
+    width: 350px;
+    height: 200px;
+}
+
+.frontside {
+    border-radius: 5px 5px;
+    background: rgb(27, 27, 199);
+    color: rgb(115, 197, 235);
+    box-sizing: border-box;
+    position: relative;
+    top: -3.5em;
+    left: 25%;
+}
+
+.backside {
+    border-radius: 5px 5px;
+    background: rgb(126, 126, 129);
+    color: rgb(7, 19, 24);
+    box-sizing: border-box;
+    position: relative;
+    top: 5em;
+    left: 25%;
+}
+
+.cardNumber {
+    position: absolute;
+    padding-top: 5px;
+    top: 50px;
+    left: 15px;
+    color: white;
+}
+
+.card .cc-num {
+    width: 35%;
+    height: 2em;
+    position: absolute;
+    padding-top: 5px;
+    top: 80px;
+    left: 15px;
+    background-color: white;
+}
+
+.expires {
+    position: absolute;
+    padding-top: 5px;
+    top: 115px;
+    left: 15px;
+    color: white;
+}
+
+.card .cc-exp {
+    width: 15%;
+    position: absolute;
+    padding-top: 5px;
+    top: 140px;
+    left: 15px;
+    height: 1.5em;
+    background-color: white;
+}
+
+.card input {
+    outline: none;
+    border: 0px solid;
+    background: none;
+    color: #FFF;
+}
+
+.typeCard {
+    position: absolute;
+    top: 80px;
+    left: 180px;
+    height: 10em;
+    width: 30%;
+}
+
+.signature {
+    background: #DDD;
+    color: #000;
+    padding: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.sig {
+    font-family: "Allura";
+}
+
+.signature input.cc-cvc {
+    color: #000;
+    width: 40px;
+}
+
+.stripe {
+    margin: 20px 0;
+    height: 40px;
+    background: #000;
+}
+
+.button {
+    background: #C41313;
+    width: 100%;
+    padding: 4px;
+    color: #FFF;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px 5px;
+}
+
+#divCard {
+    background: #C41313;
+    width: 100%;
+    padding: 4px;
+    position: relative;
+    left: 1rem;
+    color: #FFF;
+    text-align: left;
+}
+
+.buttonMain {
+    background: #C41313;
+    padding: 4px;
+    color: #FFF;
+    text-align: center;
+    width: 10em;
+    height: 3em;
+}
+
+.checkout {
+    margin: 0 auto;
+    width: 350px;
+}
+
+.addr input {
+    width: 100%;
+    outline: none;
+    border: 0px solid;
+    padding: 5px;
+}
+
+.buyButton {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(28, 184, 65);
+    width: 10em;
+    height: 3em;
+    position: relative;
+    top: 2em;
+    left: 40%;
+    /* this is a green */
+}
+
+.buyButton:hover {
+    color: #353131;
+}

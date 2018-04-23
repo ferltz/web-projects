@@ -1,0 +1,14 @@
+Open Codeanywhere
+Create folder called Shopping Cart
+Open PHPMyAdmin
+Create table called tbl_product1 
+The columns are as follows 
+- id - int, auto increment, Index=primary
+- name - varchar
+- image - varchar 
+- price - double
+
+Insert 3 rows of sample data
+In your project folder in Codeanywhere, create an image folder and upload 3 product images
+Create a file called index.php
+Create a file called success.php

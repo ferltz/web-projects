@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<!--Creation Date:30th of February of 2018
+		Modification date: 4th of February of 2018
+		Created by: Fernando La Torre Zurita
+		Purpose: Delish Food website-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Information about character set used-->
+    <title>Delish Food-Ordering</title>
+    <!-- Page title-->
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+
+</head>
+
+
+<header>
+    <!--Format link to css-style.css file which give format to common elements of all pages-->
+    <link rel="stylesheet" type="text/css" href="css-style.css" />
+
+
+    <!-- Script that calculate total amount to pay after selection and click check out button-->
+    <script src="Scripts.js"></script>
+
+    <!-- Link to enter in back office page, that allows employees to inform about company news -->
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html ">Login Employees</a>
+
+    </div>
+
+    <!--Format style for diferent parts and headings and body, this part of code was build with assistance from
+		https://www.w3schools.com/css/css_navbar.asp ; http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/
+		http://www.barelyfitz.com/screencast/html-training/css/positioning/-->
+    <style>
+        #titleLogoBox {
+            position: relative;
+            top: 1em;
+            left: 20%;
+            width: 60em;
+            height: 10em;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        #titleLogo {
+            display: inline-block;
+            width: 30em;
+            height: 10em;
+            position: relative;
+            margin-top: 0em;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+        
+        #ordering {
+            width: 60%;
+            position: relative;
+            top: 6em;
+            left: 18%;
+            text-align: justify;
+        }
+    </style>
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-27em; left:5%; width:50em; height:15em;">
+        <div id="titleLogoBox">
+            <span id="titleLogo">
+					 <!--It contents Bakery's Name-->
+						<h1>Delish Food </h1> 
+					 </span>
+            <span id="fotologo">
+						<img  src="Images2/dishLogo.png" alt="Logo Tasty Bakery" 
+						style= "display:inline-block;
+								width:10em;
+								height:8em;
+								position:relative;
+								top:2em;
+								padding-left:0.6em;
+								padding-bottom:1.2em;
+								padding-top:1.2em"	>	  
+				</span>
+
+        </div>
+    </div>
+
+</header>
+
+<body>
+
+
+    <div id="mySidenav" class="sidenav">
+
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
+
+    <!-- Code that used to build shop cart, taking as example code from :
+https://speckyboy.com/free-shopping-cart-css-javascript/-->
+
+    <!--Container of titles of the table shop cart such as: ITEM - PRICE - QUANTITY- SUBTOTAL -->
+    <main style="position:relative; top:0em; left:5%;">
+        <div style="position:relative; top:0em; left:0%;">
+            <h2>MAIN COURSES</h2>
+            <div/>
+            <div class="basket">
+                <div class="basket-labels">
+                    <ul>
+                        <li class="item item-heading">Item</li>
+                        <li class="price">Price</li>
+                        <li class="quantity">Quantity</li>
+                        <li class="subtotal">Subtotal</li>
+                    </ul>
+                </div>
+
+                <!--Ropa Vieja - Description of the dish and its price-->
+                <div class="basket-product">
+                    <div class="item">
+                        <div class="product-image">
+                            <img src="images2/ropaVieja.jpg" alt="Ropa vieja" class="product-frame">
+                        </div>
+                        <div class="product-details">
+                            <p id="product_1"><strong>Ropa Vieja</strong></p>
+                            <p>A traditional beef stew from Cuba made with shredded beef that is often served with black beans, yellow rice, plantains, and fried yuca</p>
+                        </div>
+                    </div>
+                    <div id="price_1" name="price_1" class="price">18.0</div>
+                    <div class="quantity">
+                        <input id="quantity_1" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                    </div>
+                    <div class="subtotal" id="subtotal_1">0.0</div>
+                    <div class="remove">
+                        <button id="btn_1" onclick="itemRemove(id)">Remove</button>
+                    </div>
+                </div>
+
+
+                <!--Pique Macho Description of the dish and its price-->
+                <div class="basket-product">
+                    <div class="item">
+                        <div class="product-image">
+                            <img src="images2/piqueMacho.jpg" alt="Pique Macho" class="product-frame">
+                        </div>
+                        <div class="product-details">
+                            <p id="product_2"><strong>Pique Macho</strong></p>
+                            <p>A traditional dish from Bolivia is made with pieces of beef, and french fry-cut potatoes. Added to this mixture are onions, locoto(spicy vegetal), boiled egg</p>
+                        </div>
+                    </div>
+                    <div id="price_2" name="price_2" class="price">20.0</div>
+                    <div class="quantity">
+                        <input id="quantity_2" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                    </div>
+                    <div class="subtotal" id="subtotal_2">0.0</div>
+                    <div class="remove">
+                        <button id="btn_2" onclick="itemRemove(id)">Remove</button>
+                    </div>
+                </div>
+
+                <!--Bandeja paisa Description of the dish and its price-->
+                <div class="basket-product">
+                    <div class="item">
+                        <div class="product-image">
+                            <img src="images2/BandejaPaisa1.jpg" alt="Bandeja Paisa" class="product-frame">
+                        </div>
+                        <div class="product-details">
+
+                            <p id="product_3"><strong>Bandeja Paisa</strong></p>
+                            <p>Colombian food, made by red beans cooked with pork, white rice, carne molida (ground meat), chicharrón, fried egg, plantain, chorizo, arepa, hogao sauce, black pudding, avocado and lemon</p>
+                        </div>
+                    </div>
+                    <div id="price_3" name="price_3" class="price">20.0</div>
+                    <div class="quantity">
+                        <input id="quantity_3" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                    </div>
+                    <div class="subtotal" id="subtotal_3">0.0</div>
+                    <div class="remove">
+                        <button id="btn_3" onclick="itemRemove(id)">Remove</button>
+                    </div>
+                </div>
+
+                <!--Churrasco Description of the dish and its price-->
+                <div class="basket-product">
+                    <div class="item">
+                        <div class="product-image">
+                            <img src="images2/churrasco1.jpg" alt="Churrasco" class="product-frame">
+                        </div>
+                        <div class="product-details">
+                            <p id="product_4"><strong>Churrasco</strong></p>
+                            <p> It is usually served topped with chirmol, a red sauce containing chopped tomatoes and onions, and accompanied by corn, guacamole, grilled potatoes, stewed black beans, rice </p>
+                        </div>
+                    </div>
+                    <div id="price_4" name="price_4" class="price">30.0</div>
+                    <div class="quantity">
+                        <input id="quantity_4" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                    </div>
+                    <div class="subtotal" id="subtotal_4">0.0</div>
+                    <div class="remove">
+                        <button id="btn_4" onclick="itemRemove(id)">Remove</button>
+                    </div>
+                </div>
+
+
+
+                <!--Picante de pollo Description of the dish and its price-->
+                <div class="basket-product">
+                    <div class="item">
+                        <div class="product-image">
+                            <img src="images2/picantePollo1.jpg" alt="Picante de Pollo" class="product-frame">
+                        </div>
+                        <div class="product-details">
+                            <p id="product_5"><strong>Picante de Pollo</strong></p>
+                            <p>This food is been originated from western Bolivia and is characterised by its aroma, spicy taste of choky flavour of chuño (dehydrates potatoes). The spiciness of this recipe depends on the quality of “aji” – cayenne peppers,
+                                you use</p>
+                        </div>
+                    </div>
+                    <div id="price_5" name="price_5" class="price">18.0</div>
+                    <div class="quantity">
+                        <input id="quantity_5" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                    </div>
+                    <div class="subtotal" id="subtotal_5">0.0</div>
+                    <div class="remove">
+                        <button id="btn_5" onclick="itemRemove(id)">Remove</button>
+                    </div>
+                </div>
+
+                <!--Surubi Description of the dish and its price-->
+                <div class="basket-product">
+                    <div class="item">
+                        <div class="product-image">
+                            <img src="images2/surubi.jpg" alt="Surubi al ajo" class="product-frame">
+                        </div>
+                        <div class="product-details">
+                            <p id="product_6"><strong>Surubi with garlic</strong></p>
+                            <p> dipped in batter with garlic, pepper and salt, fried, then served with broiled potato and cooked vegetables and/ or green salad with tomatoes. </p>
+                        </div>
+                    </div>
+                    <div id="price_6" name="price_6" class="price">20.0</div>
+                    <div class="quantity">
+                        <input id="quantity_6" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                    </div>
+                    <div class="subtotal" id="subtotal_6">0.0</div>
+                    <div class="remove">
+                        <button id="btn_6" onclick="itemRemove(id)">Remove</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Container of the total amount to pay for the bill -->
+            <aside>
+                <div class="summary">
+                    <div class="summary-total-items"><span class="total-items"></span> Value of your Cart</div>
+
+
+                    <!--MAIN COURSES SUBTOTAL CALCULATION-->
+                    <div class="summary-subtotal">
+                        <div class="subtotal-title">Subtotal Main Courses</div>
+                        <div class="subtotal-value final-value" id="basket-subtotal">0.00</div>
+                    </div>
+
+                    <!--DESSERTS SUBTOTAL CALCULATION-->
+                    <div class="summary-subtotal">
+                        <div class="subtotal-title" style="position:relative;left:1em;top:0em;">Subtotal Desserts</div>
+                        <div class="subtotal-value final-value" id="basket-subtotalDessert">0.00</div>
+
+                    </div>
+
+
+                    <!--EXTRAS SUBTOTAL -->
+                    <div class="summary-subtotal">
+                        <div class="subtotal-title" style="position:relative;left:1em;top:0em;">Subtotal Extras</div>
+                        <div class="subtotal-value final-value" id="basket-subtotalExtra">0.00</div>
+
+                    </div>
+
+                    <!--EXTRAS TOTAL BILL-->
+                    <div class="summary-bill">
+                        <div class="subtotal-title">Total</div>
+                        <div class="subtotal-value" id="basket-subtotal-sum">0.00</div>
+                    </div>
+                    <div class="summary-checkout">
+                        <button class="go-toCheckout" onclick="createCheckOut()">Go to Secure Checkout</button>
+                    </div>
+                    <!--go-toCheckout-->
+                </div>
+            </aside>
+
+
+
+            <!--DESSERTS SECTION FOR PICK AND CALCULATE BILL-->
+
+
+            <div class="basket">
+
+                <div style="position:relative; top:0em; left:0%;">
+                    <h2>DESSERTS</h2>
+                    <div/>
+                    <div class="basket-labels">
+                        <ul>
+                            <li class="item item-heading">Item</li>
+                            <li class="price">Price</li>
+                            <li class="quantity">Quantity</li>
+                            <li class="subtotal">Subtotal</li>
+                        </ul>
+                    </div>
+
+                    <!--Suspero Limeno - Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/SuspiroLimeno.jpg" alt="Suspiro Limeno" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_7"><strong>Suspiro Limeño</strong></p>
+                                <p>Suspiro limeño is a scrumptious dessert made with manjar blanco (caramel), egg yolks and meringue made from port wine.</p>
+                            </div>
+                        </div>
+                        <div id="price_7" name="price_7" class="price">10.0</div>
+                        <div class="quantity">
+                            <input id="quantity_7" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_7">0.0</div>
+                        <div class="remove">
+                            <button id="btn_7" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+
+                    <!--Maracuya Mousse Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/mousseMaracuya.jpg" alt="Maracuya mousse" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_8"><strong>Maracuya mousse</strong></p>
+                                <p> This delicious tropical mousse is made with passion fruit pulp, whipping cream or condensed milk, egg whites and sugar.</p>
+                            </div>
+                        </div>
+                        <div id="price_8" name="price_8" class="price">10.0</div>
+                        <div class="quantity">
+                            <input id="quantity_8" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_8">0.0</div>
+                        <div class="remove">
+                            <button id="btn_8" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+                    <!--Brigadeiro Description of the dessert and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/brigadeiro.jpg" alt="Brigadeiro" class="product-frame">
+                            </div>
+                            <div class="product-details">
+
+                                <p id="product_9"><strong>Brigadeiro</strong></p>
+                                <p>The brigadeiro is made from condensed milk, cocoa powder, and butter, and chocolate sprinkles to cover the outside layer.</p>
+                            </div>
+                        </div>
+                        <div id="price_9" name="price_9" class="price">10.0</div>
+                        <div class="quantity">
+                            <input id="quantity_9" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_9">0.0</div>
+                        <div class="remove">
+                            <button id="btn_9" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--EXTRAS TO THE ORDER-->
+
+            <div class="basket">
+
+                <div style="position:relative; top:0em; left:0%;">
+                    <h2>EXTRAS</h2>
+                    <div/>
+                    <div class="basket-labels">
+                        <ul>
+                            <li class="item item-heading">Item</li>
+                            <li class="price">Price</li>
+                            <li class="quantity">Quantity</li>
+                            <li class="subtotal">Subtotal</li>
+                        </ul>
+                    </div>
+
+                    <!--Bottled beverages Description of the products and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/beverages.jpg" alt="Beverages" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_10"><strong>Bottled beverages</strong></p>
+                                <p>Bottles of 500 ml , of Coke, Fanta and Sprite</p>
+                            </div>
+                        </div>
+                        <div id="price_10" name="price_10" class="price">18.0</div>
+                        <div class="quantity">
+                            <input id="quantity_10" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_10">0.0</div>
+                        <div class="remove">
+                            <button id="btn_10" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+
+                    <!--Patacones Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/patacones1.jpg" alt="Patacones" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_11"><strong>Patacones</strong></p>
+                                <p>Portion of 300 grs. of twice-fried plantain slices</p>
+                            </div>
+                        </div>
+                        <div id="price_11" name="price_11" class="price">20.0</div>
+                        <div class="quantity">
+                            <input id="quantity_11" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_11">0.0</div>
+                        <div class="remove">
+                            <button id="btn_11" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+                    <!--Rice Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/rice.jpg" alt="Bandeja Paisa" class="product-frame">
+                            </div>
+                            <div class="product-details">
+
+                                <p id="product_12"><strong>Bandeja Paisa</strong></p>
+                                <p>Portion of 500 grs. of rice with vegetables made by latin style</p>
+                            </div>
+                        </div>
+                        <div id="price_12" name="price_12" class="price">20.0</div>
+                        <div class="quantity">
+                            <input id="quantity_12" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_12">0.0</div>
+                        <div class="remove">
+                            <button id="btn_12" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+                    <!--French fries portion Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/frenchFries.jpg" alt="French Fries" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_13"><strong>French fries</strong></p>
+                                <p>Portion of 500 grs. of delicious potatos flavoured with butter garlic </p>
+                            </div>
+                        </div>
+                        <div id="price_13" name="price_13" class="price">30.0</div>
+                        <div class="quantity">
+                            <input id="quantity_13" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_13">0.0</div>
+                        <div class="remove">
+                            <button id="btn_13" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+
+
+                    <!--Horchata Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/horchata1.jpg" alt="Horchata" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_14"><strong>Horchata</strong></p>
+                                <p>It is a kind of beverage, made of ground almonds, sesame seeds, rice, barley peppers, you use</p>
+                            </div>
+                        </div>
+                        <div id="price_14" name="price_14" class="price">4.0</div>
+                        <div class="quantity">
+                            <input id="quantity_14" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_14">0.0</div>
+                        <div class="remove">
+                            <button id="btn_14" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+                    <!--Arepas Description of the dish and its price-->
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="images2/arepas.jpg" alt="Arepas" class="product-frame">
+                            </div>
+                            <div class="product-details">
+                                <p id="product_15"><strong>Arepa</strong></p>
+                                <p> Arepas is a type of food made of ground maize dough or cooked flour </p>
+                            </div>
+                        </div>
+                        <div id="price_15" name="price_15" class="price">5.0</div>
+                        <div class="quantity">
+                            <input id="quantity_15" type="number" value="0" min="0" class="quantity-field" onchange="calculateItemTotal(id)">
+                        </div>
+                        <div class="subtotal" id="subtotal_15">0.0</div>
+                        <div class="remove">
+                            <button id="btn_15" onclick="itemRemove(id)">Remove</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+
+<!-- Code made using assitance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant" style="position:relative;top:8em; left:0%">
+    <p style="size:0.6em;color:white">Copyright &#174 2017<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+</html>

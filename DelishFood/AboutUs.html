@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<!--Creation Date:28th of February of 2018
+		Modification date: 4th of February of 2018
+		Created by: Fernando La Torre Zurita
+		Purpose: Delish Food website-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Information about character set used-->
+    <title>Delish Food-Menu</title>
+    <!-- Page title-->
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+
+
+    <!--Format link to css-style.css file which give format to common elements of all pages-->
+    <link rel="stylesheet" type="text/css" href="css-style.css" />
+</head> 
+
+<header>
+    <!-- Link to enter in back office page, that allows employees to inform about company news -->
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html ">Login Employees</a>
+
+    </div>
+
+    <!--Format style for diferent parts and headings and body, this part of code was build with assistance from
+		https://www.w3schools.com/css/css_navbar.asp ; http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/
+		http://www.barelyfitz.com/screencast/html-training/css/positioning/-->
+
+    <style>
+        #titleLogoBox {
+            position: relative;
+            top: 1em;
+            left: 20%;
+            width: 60em;
+            height: 10em;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        #titleLogo {
+            display: inline-block;
+            width: 30em;
+            height: 10em;
+            position: relative;
+            margin-top: 0em;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+        
+        #ordering {
+            width: 60%;
+            position: relative;
+            top: 6em;
+            left: 18%;
+            text-align: justify;
+        }
+    </style>
+
+</header>
+
+<body>
+
+    <img id="backgroundimage" src="Images2/deliveryphoto.jpg" border="0" alt="Background picture">
+
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-27em; left:5%; width:50em; height:15em;">
+        <div id="titleLogoBox">
+            <span id="titleLogo">
+					 <!--It contents Bakery's Name-->
+						
+						<h1>Delish Food </h1> 
+					
+				</span>
+            <span id="fotologo">
+						<img  src="Images2/dishLogo.png" alt="Logo Tasty Bakery" 
+						style= "display:inline-block;
+								width:10em;
+								height:8em;
+								position:relative;
+								top:2em;
+								padding-left:0.6em;
+								padding-bottom:1.2em;
+								padding-top:1.2em"	>	  
+				</span>
+
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav" style="height:40em">
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="Ordering.html">Ordering</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
+
+    <div class="mainText" style="width:65%;height:25em; ">
+
+
+        <!-- Code written using examples from http://javascript-coder.com/javascript-form/javascript-calculator-script.phtml-->
+        <span id="commitment" style="position:relative;
+									top:0em; 
+									left:10%;
+									text-align:justify;
+									text-justify: inter-word;"> 
+		<!--This is the history about bakery -->
+	<!--		<p style="width:40em;display:inline-block" align="justify" >  -->
+			  <h2>Brief History</h2>
+			  <h6>Tasty Bakery, has been created in 2017. It has been created by a group of UCC E-Business entrepeneur students.			  The company propose a product mix which aim to fulfill families, students and workers requirements in centre Cork.<br>
+			  The soul and passion of the baker transcends into the loaf that is shared with the community.
+			  The bread made by Tasty Bakery has unique characteristics because of the use of available regional ingredients.
+			  The philosophy of the bakery is to enhance both the natural products and the flavor of the various grains. 
+			  The baked goods are created from apples, cranberries and hazelnuts, as well  as wheat, rye, barley and buckwheat flour. 
+			  This is bread that celebrates the tradition of breaking bread with family and friends.
+			  </h6><br>
+			  <h2>Mission</h2> 
+			  <h6>To be a point of reference of the typical latin food and native, as well as also of meats to the
+				 gridiron where simultaneously products and quality services are offered, improving constant its
+   				 processes in the search of customers satisfaction across a qualified personnel 
+				 and with the collaboration of our suppliers so much internal as day pupils. </h6><br>
+			  <h2>Vision</h2> 
+			  <h6>Our goal is to give our customers a delicious experience through food and transport 
+			     them to places from our continent and let them learn a little of Latin America<br>
+			  </h6>
+	</span>
+
+
+    </div>
+    <!--Textesection close div-->
+
+</body>
+<!-- Code made using assistance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant">
+    <p style="size:0.6em;color:white">Copyright &#174 2018<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+</html>

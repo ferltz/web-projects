@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<!--Creation Date:30th of February of 2018
+		Modification date: 4th of February of 2018
+		Created by: Fernando La Torre Zurita
+		Purpose: Delish Food website-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Information about character set used-->
+    <title>Delish Food-Menu</title>
+    <!-- Page title-->
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+
+
+    <!--Format link to css-style.css file which give format to common elements of all pages-->
+    <link rel="stylesheet" type="text/css" href="css-style.css" />
+</head>
+
+<header>
+    <!-- Link to enter in back office page, that allows employees to inform about company news -->
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html ">Login Employees</a>
+
+    </div>
+
+    <!--Format style for diferent parts and headings and body, this part of code was build with assistance from
+		https://www.w3schools.com/css/css_navbar.asp ; http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/
+		http://www.barelyfitz.com/screencast/html-training/css/positioning/-->
+    <style>
+        #titleLogoBox {
+            position: relative;
+            top: 1em;
+            left: 20%;
+            width: 60em;
+            height: 10em;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        #titleLogo {
+            display: inline-block;
+            width: 30em;
+            height: 10em;
+            position: relative;
+            margin-top: 0em;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 20px
+        }
+        
+        #ordering {
+            width: 60%;
+            position: relative;
+            top: 6em;
+            left: 18%;
+            text-align: justify;
+        }
+    </style>
+
+
+
+</header>
+
+<body>
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-27em; left:5%; width:50em; height:15em;">
+        <div id="titleLogoBox">
+            <span id="titleLogo">
+					 <!--It contents Bakery's Name-->
+						
+						<h1>Delish Food </h1> 
+					
+				</span>
+            <span id="fotologo">
+						<img  src="Images2/dishLogo.png" alt="Logo Tasty Bakery" 
+						style= "display:inline-block;
+								width:10em;
+								height:8em;
+								position:relative;
+								top:2em;
+								padding-left:0.6em;
+								padding-bottom:1.2em;
+								padding-top:1.2em"	>	  
+				</span>
+
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="Ordering.html">Ordering</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
+
+    <div class="mainText" style="width:80%;height:50em; ">
+
+
+
+
+        <!-- Code written using examples from http://javascript-coder.com/javascript-form/javascript-calculator-script.phtml-->
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div style="position:relative; top:0.5em ; left:0%;">
+                    <h2>MAIN COURSES</h2>
+                    <div/>
+                    <div class="row">
+                        <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
+                            <div class="col-md-12">
+                                <div class="main_portfolio_content">
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/ropaVieja.jpg" alt="Ropa Vieja" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Ropa Vieja (Cuba)</h6>
+                                            <p class="product_price">$18</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/piqueMacho.jpg" alt="Pique Macho" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Pique Macho (Bolivia)</h6>
+                                            <p class="product_price">$20</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/BandejaPaisa1.jpg" alt="Bandeja Paisa" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Bandeja Paisa (Colombia)</h6>
+                                            <p class="product_price">$20</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/churrasco1.jpg" alt="Churrasco" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Churrasco (Argentina)</h6>
+                                            <p class="product_price">$30</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/picantePollo1.jpg" alt="Picante de Pollo" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Picante de Pollo (Bolivia)</h6>
+                                            <p class="product_price">$18</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/surubi.jpg" alt="Surubi al ajo" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Surubi al ajo (Bolivia)</h6>
+                                            <p class="product_price">$20</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="desserts" class="portfolio">
+            <div class="container">
+                <div style="position:relative; top:2em ; left:0%;">
+                    <h2>DESSERTS</h2>
+                    <div/>
+                    <div class="row">
+                        <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
+                            <div class="col-md-12">
+
+                                <div class="main_portfolio_content">
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/SuspiroLimeno.jpg" alt="Suspiro Limeno" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Suspiro Limeño (Perú)</h6>
+                                            <p class="product_price">$10</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/mousseMaracuya.jpg" alt="Maracuya Mousse " style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Maracuya mousse (Ecuador)</h6>
+                                            <p class="product_price">$10</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/brigadeiro.jpg" alt="Brigadeiro" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Brigadeiro (Brasil)</h6>
+                                            <p class="product_price">$10</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="extras" class="portfolio">
+            <div class="container">
+                <div style="position:relative; top:2em ; left:0%;">
+                    <h2>EXTRAS</h2>
+                    <div/>
+                    <div class="row">
+                        <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
+                            <div class="col-md-12">
+
+                                <div class="main_portfolio_content">
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/beverages.jpg" alt="Beverages" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Bottled Beverages</h6>
+                                            <p class="product_price">$5 </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/patacones1.jpg" alt="Patacones " style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Patacones</h6>
+                                            <p class="product_price">$7</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/rice.jpg" alt="Rice" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Rice Portion</h6>
+                                            <p class="product_price">$5</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/frenchFries.jpg" alt="French Fries" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>French Fries</h6>
+                                            <p class="product_price">$5</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/horchata1.jpg" alt="Horchata" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Horchata</h6>
+                                            <p class="product_price">$4</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                        <img src="images2/arepas.jpg" alt="Arepas" style="height:6em; width:10em;" />
+                                        <div class="portfolio_images_overlay text-center">
+                                            <h6>Arepas</h6>
+                                            <p class="product_price">$4</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--Textesection close div-->
+
+</body>
+<!-- Code made using assistance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant">
+    <p style="size:0.6em;color:white">Copyright &#174 2018<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+</html>

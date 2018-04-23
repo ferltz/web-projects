@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<!--Creation Date:30th of February of 2018
+		Modification date: 4th of February of 2018
+		Created by: Fernando La Torre Zurita
+		Purpose: Delish Food website-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Information about character set used-->
+    <title>Delish Food-Contact Us</title>
+    <!-- Page title-->
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+
+</head>
+
+
+<header>
+    <!--Format link to css-style.css file which give format to common elements of all pages-->
+    <link rel="stylesheet" type="text/css" href="css-style.css" />
+
+
+    <!-- Script that calculate total amount to pay after selection and click check out button-->
+    <script src="Scripts.js"></script>
+
+    <!-- Link to enter in back office page, that allows employees to inform about company news -->
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html ">Login Employees</a>
+
+    </div>
+
+    <!--Format style for diferent parts and headings and body, this part of code was build with assistance from
+		https://www.w3schools.com/css/css_navbar.asp ; http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/
+		http://www.barelyfitz.com/screencast/html-training/css/positioning/-->
+    <style>
+        #titleLogoBox {
+            position: relative;
+            top: 1em;
+            left: 20%;
+            width: 60em;
+            height: 10em;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        #titleLogo {
+            display: inline-block;
+            width: 30em;
+            height: 10em;
+            position: relative;
+            margin-top: 0em;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+        
+        #ordering {
+            width: 60%;
+            position: relative;
+            top: 6em;
+            left: 18%;
+            text-align: justify;
+        }
+    </style>
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-27em; left:5%; width:50em; height:15em;">
+        <div id="titleLogoBox">
+            <span id="titleLogo">
+					 <!--It contents Bakery's Name-->
+						<h1>Delish Food </h1> 
+				</span>
+            <span id="fotologo">
+						<img  src="Images2/dishLogo.png" alt="Logo Tasty Bakery" 
+						style= "display:inline-block;
+								width:10em;
+								height:8em;
+								position:relative;
+								top:2em;
+								padding-left:0.6em;
+								padding-bottom:1.2em;
+								padding-top:1.2em"	>	  
+				</span>
+
+        </div>
+    </div>
+
+</header>
+
+<body>
+
+
+
+
+
+    <!-- Code done following instructions from
+	https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed-->
+
+
+    <div id="mySidenav" class="sidenav" style="height: 50em">
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="Ordering.html">Ordering</a>
+
+    </div>
+
+    <div style="position:relative; top:3em; left:30%">
+
+        <h3>You can find us here!</h3>
+
+
+
+        <img src="Images2/map.png" alt="Map" style="position:relative; top:2em; left:-5%">
+        <a style="position:relative; top:4em; left:-20%" href="https://www.google.ie/search?rlz=1C1CHBD_enBO742BO742&q=cork%20maps%20bakery&sa=X&ved=0ahUKEwjBt7zu08PWAhXCJcAKHcAvDGcQvS4ISTAA&biw=1366&bih=613&npsic=0&rflfq=1&rlha=0&rllag=51896635,-8470433,455&tbm=lcl&rldimm=4210506598759964893&rldoc=1&tbs=lrf:!2m4!1e17!4m2!17m1!1e2!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9#rlfi=hd:;si:4210506598759964893;mv:!1m3!1d6001.100090398943!2d-8.474743499999931!3d51.897650599999984!3m2!1i401!2i468!4f13.1"
+            alt="Google Map">Direction</a>
+
+    </div>
+
+    <!--Part of code taken from https://www.formget.com/javascript-contact-form/-->
+    <form style="position:relative; 
+				  width: 80%; 
+				  top:10em;
+				  left:28em" action="#" method="post" id="valForm">
+        <label for="contact-name">Name</label>
+        <input name="name" type="text" id="name" size="30" placeholder="Enter your name..." onblur="validateName()" /><br />
+        <label for="contact-email">E-mail address</label>
+        <input name="mail" type="text" id="mail" size="30" placeholder="yourname@company.com" onblur="validateEmail();" /><br/>
+        <label for="contact-Message">Your Message</label>
+        <textarea border="1" id="message" rows="10" cols="50" placeholder="Star to write your message ..." onblur="validateMessage()"> </textarea> <br/>
+        <input type="button" value="Send email" onclick="validationContact()" id="sendMail" />
+        <!--Link to validationContact() function-->
+
+    </form>
+
+
+    <script>
+        /*Call all functions to validate name ; email and message of the form filled by a user*/
+        function validationContact() {
+
+
+            //Cookies capture and show inside an alert box
+
+            setCookie();
+
+            getCookie();
+
+        }
+
+
+        /*Validate mail and characters allowed on a email with pattern: aaaaaa@bbbb.ccc*/
+        function validateEmail() {
+
+
+            var inputMail = document.getElementById("mail").value;
+
+            var atposition = inputMail.indexOf("@");
+
+            var dotposition = inputMail.lastIndexOf(".");
+
+            /*	Code extract from https://www.formget.com/form-validation-using-javascript/ to validateEmail
+            / mail characters and their positions*/
+            /* Expression that put restrictions for the mail divided in three parts where first segment can
+            have A to Z letters and 0-9 numbers and special signs such - and . The second segment is separated
+            by @ symbol the second part can contain A-Z, a-z and 0-9 characters and special signs - . and the last
+            segment can have 2 to 3 characters and just letters 
+			
+            */
+            var emailExp = /^([a-zA-Z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([a-zA-z]){2,4}$/;
+
+
+            if (emailExp.test(inputMail) == false) {
+
+                alert("You mail is no valid, please enter a valid one");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+                return false;
+            } else {
+
+                document.getElementById("sendMail").disabled = false;
+                return true;
+            }
+
+            if (atposition < 0) {
+                alert("Please introduce a valid mail");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+            } else if (dotposition < atposition) {
+                alert("Please introduce a valid mail");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+            } else if (dotposition < atposition + 3) {
+                alert("Please introduce a valid mail");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+            } else if (dotposition < 0) {
+                alert("Please introduce a valid mail");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+            } else if (dotposition <= inputMail.length - 5) {
+                alert("Please introduce a valid mail");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+            } else if ((inputMail.length - dotposition) > 3 || (inputMail.length - dotposition) < 2) {
+                alert("Please introduce a mail with the right extension_1");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+            } else if (inputMail == "") {
+                alert("Please write a mail");
+                document.getElementById("mail").focus();
+                document.getElementById("sendMail").disabled = true;
+                return false;
+            }
+
+        }
+
+        /*Name validation function*/
+        function validateName() {
+
+            var userName = document.getElementById("name").value;
+
+
+
+            var patternName = /^([A-z0-9À-ž\s]){2,}$/;
+
+            // alert("well done champion "+patternName);
+
+
+            if (patternName.test(userName) == false) {
+
+                alert("You name has invalid characters: #$@!*&");
+
+                document.getElementById("name").focus();
+                document.getElementById("sendMail").disabled = true;
+                return false;
+            } else {
+
+                //alert("Your name is valid");
+                document.getElementById("sendMail").disabled = false;
+                return true;
+            }
+        }
+
+        //Function that allows to validate the longitud of the message
+        function validateMessage() {
+
+            var textbox = document.getElementById("message");
+            if (message.value.length <= 500 && message.value.length >= 5) {
+                alert("Your message has been sent ");
+                document.getElementById("sendMail").disabled = false;
+                return true;
+            } else {
+                alert("make sure the input is between 5-500 characters long")
+                document.getElementById("mail").focus();
+                if (message.value.length >= 500) {
+                    var trimString = textbox.substr(0, 500);
+                    alert("Your message will be trimmed to 500 characters");
+                    textbox = trimString;
+                    document.getElementById("sendMail").disabled = true;
+                }
+                return false;
+            }
+
+        }
+
+
+        //Function that validate message content 
+
+        // clear all the fields of the form
+        function clear() {
+
+            document.getElementById("name").value == "";
+            document.getElementById("mail").value == "";
+            document.getElementById("message").value == "";
+        }
+
+
+        /*Cookies capture for Name email and message of costumers*/
+
+        function setCookie() {
+
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("mail").value;
+            var message = document.getElementById("message").value;
+
+
+            document.cookie = name + "," + email + "," + message;
+
+
+
+            alert("Cookie created");
+
+        }
+
+        function getCookie() {
+
+            var cookieArray = document.cookie.split(",");
+
+
+
+            var name = cookieArray[0];
+
+            var email = cookieArray[1];
+
+            var message = cookieArray[2];
+
+
+
+
+
+            if (cookieArray.length != 0) {
+                alert("Cookie=\n" + name + "\n" + email + "\n" + message);
+            } else {
+                alert("There is no any cookie captured");
+            }
+
+        }
+    </script>
+
+
+</body>
+<!-- Code made using assistance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant" style="position:relative; top:14em; ">
+    <p style="size:0.6em;color:white">Copyright &#174 2018<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+
+</html>

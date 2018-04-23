@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<!--Creation Date:30th of February of 2018
+		Modification date: 4th of February of 2018
+		Created by: Fernando La Torre Zurita
+		Purpose: Delish Food website-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Information about character set used-->
+    <title>Delish Food</title>
+    <!-- Page title-->
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+
+
+    <!--Format link to css-style.css file which give format to common elements of all pages-->
+    <link rel="stylesheet" type="text/css" href="css-style.css" /> // redirecting to Script.js file to execute validation
+    <script src="login.js"></script>
+</head>
+
+<header>
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html "> .</a>
+
+    </div>
+    <!--Format style for different parts and headings and body, this part of code was build with assistance from
+	https://www.w3schools.com/css/css_navbar.asp and http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/ 
+	http://www.barelyfitz.com/screencast/html-training/css/positioning/-->
+    <style type="text/css">
+        #strip1 {
+            background-color: #EAEA27;
+            position: relative;
+            top: -0.3em;
+            left: 0em;
+            width: 100%;
+            height: 2em;
+        }
+    </style>
+
+</header>
+
+<body>
+
+
+    <!--It contents Restaurant's Name-->
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-27em; left:24%; width:50em; height:15em;">
+        <span id="titleLogo">
+		<h1 align="center">Delish Food</h1>
+		</span>
+
+        <!-- Logo section and style definition -->
+        <span id="fotologo">
+				<img  src="Images2/dishLogo.png" alt="Logo Delish" 
+					  style="width:15em; height:8em">
+		</span>
+
+    </div>
+
+    <!--Slider of typical courses
+	 Code done following instructions from
+	 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed-->
+
+
+    <div id="mySidenav" class="sidenav" style="height: 18em;
+									width: 12em;">
+
+        <a href="AboutUs.html">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="Ordering.html">Ordering</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
+
+
+    <div id="container" style="position:relative;
+									 top:-5em;
+									 left:20%;">
+        <div class="main" id="container" style="position:relative;
+									 top:5em;
+									 left:0%;">
+            <h2> Employees Login</h2>
+            <form id="form_id" method="post" name="myform" style="position:relative; top:2em;">
+                <span><label><h3>User Name : </h3></label></span>
+                <span><input type="text" name="username" id="username" style="width:15em; background-color:#CFC8C8;border:1px;border:1px solid black;"/></span><br>
+                <span><label><h3>Password : </h3></label></span>
+                <input type="password" name="password" id="password" style="width:15em;background-color:#CFC8C8;border:1px solid black;" />
+                <input type="button" value="Login" id="submit" onclick="validate()" />
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<!-- Code made using assitance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant" style="position:relative;top:12em; left:0%">
+    <p style="size:0.6em;color:white">Copyright &#174 2017<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+</html>

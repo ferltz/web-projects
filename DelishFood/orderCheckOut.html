@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Cart Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css-style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+    <script src="Scripts.js">
+    </script>
+
+
+</head>
+
+<body onload="shopCartLoad()">
+
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html ">Login Employees</a>
+
+    </div>
+
+    <!-- Logo and name of resturant-->
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-25em; left:24%; width:50em; height:15em;">
+        <span id="titleLogo">
+		<h1 align="center">Delish Food</h1>
+		</span>
+
+        <!-- Logo section and style definition -->
+        <span id="fotologo">
+				<img  src="Images2/dishLogo.png" alt="Logo Delish" 
+					  style="width:15em; height:8em">
+		</span>
+
+    </div>
+    <div align="center" style="position:relative; top:0em">
+        <h3>Your shopping cart</h3>
+
+    </div>
+
+    <div class="container-fluid breadcrumbBox text-center" style=" position:relative; top:-6em; ">
+        <ol class="breadcrumb" style="background-color:#16BF00;text-align: center; color:#FFFFFF">
+            <li>
+                <!---->
+                <a href="Ordering.html" onclick="dataRestore()">Review--</a>
+            </li>
+            <li class="active">
+                <a>Order</a>
+            </li>
+            <li>
+                <a href="#card">--Payment</a>
+            </li>
+        </ol>
+    </div>
+
+    <div style="width:100%; position:relative; 
+                top:-14em ;left:5%;
+                vertical-align: middle;">
+        <span class="cart-container" style="float:left">
+		
+			<span id="cart" >
+					<img  src="images2/checkout.jpg" alt="Cart Logo" 
+                          style="width:22em; height:auto;
+                          vertical-align: middle;">
+					
+		    </span>
+        </span>
+
+        <span style="position:relative; top:21em;left:2%">
+            <div id="orderList">
+                <table style="background-color: #eee;padding:0.1rem;
+                                border: 1px solid #aaa; position:relative;
+                                top:-20em;width:300px;left:5%;height:0.2em;
+                                vertical-align: middle;">
+                    <tr>
+                        <th><h2 style="font-size:1.2em; ">Item</h2></th>
+                        <th><h2 style="font-size:1.2em; ">Quantity</h2></th> 
+                        <th><h2 style="font-size:1.2em; ">Unit Price</h2></th>
+                        <th><h2 style="font-size:1.2em; ">Subtotal Price</h2></th>
+                    </tr>	
+                </table>
+                <table id="Products Ordered" style="background-color: #eee;padding: 0.5rem;
+                                            border: 1px solid #aaa; position:relative;
+                                            top:-20em;width:44.8em;left:5%;height:                 
+                                            auto; vertical-align: middle;">
+                                    
+                    <!-- Table created with javascript-->
+                </table>
+            </div>
+        </span>
+
+    </div>
+    <!-- Proceed to choose shipment service and check outline-->
+
+    <div class="summary" style="
+									  background-color: #eee;
+									  border: 1px solid #aaa;
+									  padding: 1rem;						  						  
+									  position:relative;
+									  top:-12em;
+									  left:36.5%;
+									  width: 45em;
+                                      box-sizing: border-box;
+                                      display: inline-block;">
+        <span>  <select name="summary" class="summary-selection" id="deliveryList" 
+                            style="position:relative; right:45%; width: 20em;"
+                            onchange="deliveryPrice()" >
+							 <option value="0" selected="selected">Select Collection or Delivery</option>
+							 <option value="collection">Collection</option>
+							 <option value="first-class">Delivery Xpress</option>
+                  </select>
+        </span>
+        <span class="subtotal-value final-value" id="BillSubtotal" style="position:relative;
+                                                                    left:52%;                                                                        
+                                                                    width: 20em;">0.00</span>
+
+    </div>
+    <div style="background-color: #eee;
+                                    border: 1px solid #aaa;
+                                    padding: 1rem;						  						  
+                                    position:relative;
+                                    top:-10em;
+                                    left:36.5%;
+                                    width: 45em;
+                                    box-sizing: border-box;">
+        <span style="text-align: left ;width:10em;"><h4>TOTAL</h4></span>
+        <span class="subtotal-value" id="totalbill" style="position:relative;
+                                    left:50%; top:-1.5em; ">0.00</span></div>
+
+
+
+    <!--Check out  Form-->
+    <div id="divCard">
+        Card Information
+    </div>
+    <div class="card" id="card">
+        <span class="frontside">
+            <span class="company">
+				 <image src="Images2/cardlogos.png" style="width:130px;height:30px;"></image>
+			  </span> PAYMENT CARD INFORMATION
+        <div>
+            <label class="cardNumber">Card Number</label>
+            <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" class="cc-num" id="cc-num" style="color:blue" maxlength="16" onblur="cardNumberValidation()" />
+        </div>
+        <div>
+            <label class="expires">EXPIRES:</label>
+            <input type="text" placeholder="MM/YY" class="cc-exp" id="cc-exp" style="color:blue" onblur="expirationDateValidation()" maxlength="5" />
+        </div>
+        <div id="typeCard" class="typeCard">
+            <input type="radio" id="visaCard" name="rate" value="Visa" checked="true"> Visa<br>
+            <input type="radio" id="MasterCard" name="rate" value="Master Card"> MasterCard
+        </div>
+        </span>
+        <span class="backside">
+            <div class="stripe"></div>
+            <div class="signature">
+                <span class="right">
+				CVC: <input type="text" placeholder="000" class="cc-cvc" id="cc-cvc" maxlength="4" onblur="cvcValidation()" />
+				</span>
+        <span class="sig">
+				 Customer Name
+		</span>
+    </div>
+    </span>
+    </div>
+    <div class="button flip">
+        Delivery Information
+    </div>
+
+    <div class="addr" style="padding-left:40%;">
+        <span><label><h4>Customer Name:</h4></label></span> <span> <input id="customerName" type="text" placeholder="Customer who will receive the order" maxlength="30" onblur="emptyNameCheck()"/></span>
+        <span><label><h4>Address(line 1):</h4></label></span> <span> <input id="address1" type="text" placeholder="Address Line 1" maxlength="30" onblur="emptyaddress1Check()"/></span>
+        <span><label><h4>Address(line 2):</h4></label> </span><span><input id="address2" type="text" placeholder="Address Line 2" maxlength="30" onblur="emptyaddress2Check()"/></span>
+        <span><label><h4>Area:</h4></label></span><span><input id="area" type="text" placeholder="Area" maxlength="20" onblur="emptyareaCheck()"/></span>
+        <span><label><h4>County:</h4></label></span>
+        <span>  <select id="towns" type="text" maxlength="20">
+                <option value ="empty" selected="selected">_</option>
+				<option value ="Adrigole">Adrigole</option>
+                <option value ="Aghabullogue">Aghabullogue</option>
+                <option value ="Ahakista">Ahakista</option>
+                <option value ="Ballincollig">Ballincollig</option>
+                <option value ="Ballindangan">Ballindangan</option>
+                <option value ="Bantry">Bantry</option>
+                <option value ="Carrigaline">Carrigaline</option>
+                <option value ="Castletown-Kinneighr">Castletown-Kinneigh</option>
+                <option value ="Castlemartyr">Castlemartyr</option>
+                <option value ="Castletownbere">Castletownbere</option>
+                <option value ="Crosshaven">Crosshaven</option>
+                <option value ="Drinagh">Drinagh</option>
+                <option value ="Dromahane">Dromahane</option>
+                <option value ="Durrus">Durrus</option>
+                <option value ="Farran">Farran</option>
+                <option value ="Fermoy">Fermoy</option>
+                <option value ="Glanmire">Glanmire</option>
+                <option value ="Grenagh">Grenagh</option>
+                <option value ="Inchigeelagh">Inchigeelagh</option>
+                <option value ="Kanturk">Kanturk</option>
+                <option value ="Kilcorney">Kilcorney    </option>
+                <option value ="Kilworth">Kilworth</option>
+                <option value ="Kinsale">Kinsale</option>
+                <option value ="Liscarroll">Liscarroll</option>
+                <option value ="Lismire">Lismire</option>
+                <option value ="Midleton">Midleton</option>
+                <option value ="Moyvane">Moyvane</option>
+                <option value ="Newcestown">Newcestown</option>
+                <option value ="Rathcormac">Rathcormac</option>
+                <option value ="Youghal">Youghal</option>
+                </select> </span>
+        <span> <label><h4>Postcode:</h4></label></span><span><input id="postcode" type="text" placeholder="Postcode" maxlength="5" onblur="postCodeValidation()"/></span>
+
+    </div>
+    <button class="buyButton" id="Buy" onclick="deliverValidation()">Corfirm Order</button>
+
+    <div id="printResult">
+
+    </div>
+
+
+</body>
+
+<!-- Code made using assistance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant">
+    <p style="size:0.6em;color:white">Copyright &#174 2018<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+</html>

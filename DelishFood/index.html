@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<!--Creation Date:30th of February of 2018
+		Modification date: 4th of February of 2018
+		Created by: Fernando La Torre Zurita
+		Purpose: Delish Food website-->
+
+<head>
+    <meta charset="utf-8">
+    <!--Information about character set used-->
+    <title>Delish Food - Index</title>
+    <!-- Page title-->
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Permanent+Marker|Sedgwick+Ave+Display" rel="stylesheet">
+
+
+
+    <!--Format link to css-style.css file which give format to common elements of all pages-->
+    <link rel="stylesheet" type="text/css" href="css-style.css" />
+</head>
+
+<header>
+    <!-- Link to enter in back office page, that allows employees to inform about company news -->
+    <div id="headerFood">
+        <a align="right" style="size:1.6em;color:white" href="loginEmployees.html">Login Employees</a>
+
+    </div>
+    <!--Format style for different parts and headings and body, this part of code was build with assistance from
+	https://www.w3schools.com/css/css_navbar.asp and http://html5facil.com/tutoriales/como-crear-menu-basico-html5-css3/ 
+	http://www.barelyfitz.com/screencast/html-training/css/positioning/-->
+    <style type="text/css">
+        #strip1 {
+            background-color: #EAEA27;
+            position: relative;
+            top: -0.3em;
+            left: 0em;
+            width: 100%;
+            height: 2em;
+        }
+    </style>
+
+</header>
+
+<body>
+
+    <!--Slider of typical courses
+	 Code done following instructions from
+	 https://www.w3schools.com/w3css/w3css_slideshow.asp-->
+
+
+    <div class="outerBox" id="outerBox">
+
+        <table id="sliderBox">
+            <td><img src="images2\BandejaPaisa.jpg" height="300px" width="600px" /></td>
+            <td><img src="images2\piqueAloMacho.jpg" height="300px" width="600px" /></td>
+            <td><img src="images2\picantePollo.jpg" height="300px" width="600px" /></td>
+            <td><img src="images2\churrasco.jpg" height="300px" width="600px" /></td>
+            <td><img src="images2\CevichedePescado.jpg" height="300px" width="600px" /></td>
+        </table>
+
+    </div>
+
+    <div id="strip1">
+
+    </div>
+
+    <!--It contents Restaurant's Name-->
+    <div id="titleandLogoContainer" align="center" style="position:relative; top:-27em; left:24%; width:50em; height:15em;">
+        <span id="titleLogo">
+		<h1 align="center">Delish Food</h1>
+		</span>
+
+        <!-- Logo section and style definition -->
+        <span id="fotologo">
+				<img  src="Images2/dishLogo.png" alt="Logo Delish" 
+					  style="width:15em; height:8em">
+		</span>
+
+    </div>
+
+
+    <!--Slider of typical courses
+	 Code done following instructions from
+	 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed-->
+
+
+    <div id="mySidenav" class="sidenav" style=" height:25em">
+
+        <a href="AboutUs.html">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="Ordering.html">Ordering</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
+
+    <div style="position:relative; top:-34em;">
+        <h1 align="center">FOR</h1>
+    </div>
+
+    <div style="position:relative; top:-35em;left:23%">
+        <img src="Images2/latinbanner.jpg" alt="banner" align="center" style="width:50em; height:15em">
+    </div>
+
+
+    <div id="catalogo" align="justify" style="position:relative;top:-30em; left:10% ;">
+
+        <!--Table which contains photos and links of products categories-->
+        <table border="0" style="width:65%;position:relative;top:0.1em; left:2%;">
+
+            <tr>
+                <!--Table Row-->
+                <td align="center"><img src="Images2/Brazil.gif" alt="Brazil" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/Argentina.gif" alt="Argentina" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/Bolivia.gif" alt="Croissants" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/Colombia.gif" alt="Colombia" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/Cuba.gif" alt="Cuba" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/Peru.gif" alt="Peru" style="width:50px;height:38px;border:0"></td>
+            </tr>
+            <tr>
+                <!--Table Row-->
+                <td align="center"><img src="Images2/surubi.jpg" alt="Surubi" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/churrasco1.jpg" alt="Churrasco" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/piqueMacho.jpg" alt="Pique a lo macho" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/BandejaPaisa1.jpg" alt="Bandeja Paisa" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/ropaVieja.jpg" alt="Ropa Vieja" style="width:50px;height:38px;border:0"></td>
+                <td align="center"><img src="Images2/SuspiroLimeno.jpg" alt="Suspiro limeno" style="width:50px;height:38px;border:0"></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+</body>
+<!-- Code made using assistance from https://stackoverflow.com/questions/4685501/extend-footer-wrap-to-width-of-page for footer part-->
+<footer id="footerRestaurant">
+    <p style="size:0.6em;color:white">Copyright &#174 2018<br> e-mail: contact@delish_food.com<br> Tel:+353 21 4307065 <br>
+    </p>
+</footer>
+
+
+</html>
